@@ -54,12 +54,12 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
       id: new Id(client.id),
       name: client.name,
       email: client.email,
-      street: client.address?.street,
-      city: client.address?.city,
-      state: client.address?.state,
-      zipCode: client.address?.zipCode,
-      number: client.address?.number,
-      complement: client.address?.complement,
+      street: client.street,
+      city: client.city,
+      state: client.state,
+      zipCode: client.zipCode,
+      number: client.number,
+      complement: client.complement,
     });
 
     const order = new Order({
@@ -72,8 +72,7 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
       orderId: order.id.id,
       amount: order.total,
     });
-    console.log("aqui");
-    console.log(client);
+
     const invoice = payment.status === "approved"
       ? await this._invoiceFacade.generate({
         name: myClient.name,
