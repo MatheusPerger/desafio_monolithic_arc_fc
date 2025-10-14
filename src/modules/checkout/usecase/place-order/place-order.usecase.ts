@@ -66,7 +66,6 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
       client: myClient,
       products: products,
     });
-    this._repository.addOrder(order);
 
     const payment = await this._paymentFacade.process({
       orderId: order.id.id,
