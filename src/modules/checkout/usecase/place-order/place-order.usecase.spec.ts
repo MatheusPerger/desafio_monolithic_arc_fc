@@ -1,4 +1,3 @@
-import { number } from "yup";
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import Product from "../../domain/product.entity";
 import PlaceOrderUseCase from "./place-order.usecase";
@@ -62,7 +61,7 @@ describe("PlaceOrderUseCase unit test", () => {
 
     describe("getProduct method", () => {
         beforeAll(() => {
-            jest.useFakeTimers("modern");
+            jest.useFakeTimers();
             jest.setSystemTime(mockDate);
         });
 
@@ -118,7 +117,7 @@ describe("PlaceOrderUseCase unit test", () => {
 
     describe("execute method", () => {
         beforeAll(() => {
-            jest.useFakeTimers("modern");
+            jest.useFakeTimers();
             jest.setSystemTime(mockDate);
         });
 
