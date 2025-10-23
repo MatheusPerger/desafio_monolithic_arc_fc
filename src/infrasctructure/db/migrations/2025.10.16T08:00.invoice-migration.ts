@@ -21,7 +21,7 @@ export const up: MigrationFn<Sequelize> = async ({ context: sequelize }) => {
             allowNull: false
         },
         number: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.STRING(255),
             allowNull: false
         },
         complement: {
@@ -40,11 +40,11 @@ export const up: MigrationFn<Sequelize> = async ({ context: sequelize }) => {
             type: DataTypes.STRING(10),
             allowNull: false
         },
-        createdAt: {
+        created_at: {
             type: DataTypes.DATE,
             allowNull: false
         },
-        updatedAt: {
+        updated_at: {
             type: DataTypes.DATE,
             allowNull: false
         }

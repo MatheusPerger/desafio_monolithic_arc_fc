@@ -12,7 +12,7 @@ export default class FindInvoiceUseCase {
       const invoice = await this._invoiceRepository.find(input.id);
       
       if (!invoice) throw new Error("Invoice not found");
-      
+
       return {
         id: invoice.id.id,
         name: invoice.name,

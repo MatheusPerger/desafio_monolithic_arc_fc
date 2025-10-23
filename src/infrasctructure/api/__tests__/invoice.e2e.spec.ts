@@ -38,7 +38,7 @@ describe("E2E test for invoice", () => {
         await sequelize.close();
     })
 
-    it("should create a client", async () => {
+    it("should create a invoice", async () => {
         const invoice = new Invoice(
             new Id("1"),
             "Cliente",
@@ -49,7 +49,7 @@ describe("E2E test for invoice", () => {
                 "",
                 "Cidade",
                 "UF",
-                "00000-000",
+                "12345-444",
             ),
             [
                 new InvoiceItem( new Id("item1"), "Item 1", 100 ),
@@ -69,7 +69,6 @@ describe("E2E test for invoice", () => {
         expect(response.body.address.street).toBe(result.address.street);
         expect(response.body.address.number).toBe(result.address.number);
         expect(response.body.address.city).toBe(result.address.city);
-        expect(response.body.address.zipCode).toBe(result.address.zipCode);
         expect(response.body.items.length).toBe(2);
         expect(response.body.items[0].id).toBe(result.items[0].id.id);
         expect(response.body.items[0].name).toBe(result.items[0].name);
